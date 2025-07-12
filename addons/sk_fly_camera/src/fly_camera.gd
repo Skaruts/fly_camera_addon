@@ -1,4 +1,4 @@
-@icon("res://addons/sk_fly_camera/icons/fly_camera.svg")
+@icon("../icons/fly_camera.svg")
 class_name FlyCamera
 extends CharacterBody3D
 
