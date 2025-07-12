@@ -12,15 +12,25 @@ extends CharacterBody3D
 ## tweak its settings in the inspector.
 ## [br][br]
 ##
-## [color=white][b]Note:[/b][/color] the camera node itself is not an actual
-## camera, but a [CharacterBody3D], so it has no visual preview in the inspector.
-## You can still align it to the camera in the 3D View, by clicking
-## [param Perspective > Align Transform With View].
+## The camera node itself is not an actual camera, but a [CharacterBody3D], so
+## it has no visual preview in the inspector. You can still align it to the
+## camera in the 3D View, by clicking [param Perspective > Align Transform With View].
+## [br][br]
+##
+## You will also see a warning in the [param Scene] tree about the [CharacterBody3D]
+## not having a shape. Normally a flying camera doesn't need any collisions,
+## and you can ignore the warning. The camera still supports collisions, though,
+## either by turning on [param Use Collisions] in the inspector, or by
+## manually adding a [CollisionShape3D] node with a shape of your choice.
+## [br][br]
+##[color=white][b]Note:[/b][/color] the collisions are added at runtime, so
+## turning on [param Use Collisions] will not suppress the warning.
 ## [br][br]
 ##
 ## The camera controls can be changed. By default it uses the [param WASD]
-## keys, [param Shift] to move faster, [param Ctrl] to move slower, and
-## the [param Right Mouse Button] to activate/deactivate.
+## keys for movement, [param Shift] to move faster, [param Ctrl] to move slower, and
+## the [param Right Mouse Button] to activate/deactivate the mouse controls
+## (capturing/uncapturing the mouse pointer).
 ## [br][br]
 ##
 ## This camera was intended for quick use, so the default controls are easy to
@@ -36,12 +46,10 @@ extends CharacterBody3D
 ##cam_slower
 ##cam_activate
 ## [/codeblock]
-## [color=white][b]Note:[/b][/color] if all you want is to change which
-## mouse button activates the camera, then you don't need to use
-## the [param cam_activate] input action, as the mouse
-## button can more easily be changed in the camera settings in the inspector.
-## Support for the [param cam_activate] input action is provided in case
-## you want to use a keyboard key instead.
+## [color=white][b]Note:[/b][/color] the mouse button used to activate the
+## camera can easily be changed in the inspector, so for that end you don't
+## need to use [param cam_activate] input action.
+## This action is provided in case you'd like to use a keyboard key instead.
 ##
 ##
 
